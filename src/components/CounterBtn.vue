@@ -1,5 +1,5 @@
 <template>
-  <button @click="count++">count is: {{ count }}</button>
+  <button @click="addCount" :style="{'font-size': '24px'}">count is: {{ count }}</button>
 </template>
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
@@ -7,7 +7,14 @@ import { defineComponent, ref } from 'vue'
 export default defineComponent({
   setup: () => {
     const count = ref(0)
-    return { count }
+    
+    const addCount = () => {
+      count.value = count.value +1
+      setTimeout(()=>{
+        count.value = count.value +1
+      }, 0)
+    }
+    return { count, addCount }
   }
 })
 </script>
