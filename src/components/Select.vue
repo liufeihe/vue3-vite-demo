@@ -1,7 +1,6 @@
 <template>
   <a-select
     v-model:value="value1"
-    style="width: 120px"
     @focus="focus"
     ref="select"
     @change="handleChange"
